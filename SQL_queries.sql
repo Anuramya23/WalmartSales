@@ -29,7 +29,7 @@ SELECT
 FROM sales;
 
 
--- Add the time_of_day column
+-- Adding the time_of_day column
 SELECT
 	time,
 	(CASE
@@ -42,9 +42,7 @@ FROM sales;
 
 ALTER TABLE sales ADD COLUMN time_of_day VARCHAR(20);
 
--- For this to work turn off safe mode for update
--- Edit > Preferences > SQL Edito > scroll down and toggle safe mode
--- Reconnect to MySQL: Query > Reconnect to server
+
 UPDATE sales
 SET time_of_day = (
 	CASE
@@ -55,7 +53,7 @@ SET time_of_day = (
 );
 
 
--- Add day_name column
+-- Adding day_name column
 SELECT
 	date,
 	DAYNAME(date)
@@ -67,7 +65,7 @@ UPDATE sales
 SET day_name = DAYNAME(date);
 
 
--- Add month_name column
+-- Adding month_name column
 SELECT
 	date,
 	MONTHNAME(date)
@@ -78,8 +76,7 @@ ALTER TABLE sales ADD COLUMN month_name VARCHAR(10);
 UPDATE sales
 SET month_name = MONTHNAME(date);
 
--- --------------------------------------------------------------------
--- ---------------------------- Generic ------------------------------
+-- -----------------------------------------------------------------
 -- --------------------------------------------------------------------
 -- How many unique cities does the data have?
 SELECT 
